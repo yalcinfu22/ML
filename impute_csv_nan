@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jun 21 19:57:59 2025
+
+@author: LENOVO
+"""
+
+
+import pandas as pd #şablonlar
+import numpy as np #büyük sayılar
+import matplotlib.pyplot as plt #çizim
+
+veriler = pd.read_csv("eksikveriler.csv")
+
+print(veriler)
+
+##eksik veriler
+
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean')
+
+yas = veriler.iloc[:, 1:4].values
+yaslar = veriler[['yas']]
+print(yaslar)
+print(yas)
